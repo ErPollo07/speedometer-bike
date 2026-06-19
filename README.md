@@ -14,7 +14,8 @@ Freenove ESP32 Kit Dev
 
 OLED display, controllable via I2C, mounted on the dashboard inside a 3D-printed enclosure.
 
-OLED display 128x64 I2C 0.96 SSD1306
+[Aliexpress](https://it.aliexpress.com/item/1005006141235306.html?spm=a2g0o.cart.0.0.714b18fceknTuP&mp=1&gatewayAdapt=glo2ita)
+OLED display 128x64 I2C 0.96 SSD1306 Yellow/Blue
 
 ### Speed Sensor
 
