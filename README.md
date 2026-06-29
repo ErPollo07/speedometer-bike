@@ -17,19 +17,12 @@ OLED display, controllable via I2C, mounted on the dashboard inside a 3D-printed
 [Aliexpress](https://it.aliexpress.com/item/1005006141235306.html?spm=a2g0o.cart.0.0.714b18fceknTuP&mp=1&gatewayAdapt=glo2ita)
 OLED display 128x64 I2C 0.96 SSD1306 Yellow/Blue
 
+Edit: The display is very small, so have to place a lens in front of it to enlarge the image.
+
 ### Speed Sensor
 
 An IR break-beam sensor (separate emitter and receiver) that detects wheel rotation by counting how many times the beam is interrupted by the wheel's spokes. A break-beam design was chosen over a
 reflective sensor because the sensor needs to sit 3-5 cm away from the spokes, which is beyond the reliable range of standard reflective IR sensors.
-
-[Amazon](https://www.amazon.it/Treedix-Conteggio-Through-Beam-Interruttore-fotoelettrico/dp/B0DX1FVDF2/ref=sr_1_2?sr=8-2)
-Corrente nominale: 20 Milliampere
-Tensione di alimentazione massima: 5 Volt (CC)
-Tipo di montaggio: Montaggio su superficie
-Tipo di uscita: Digitale
-Tempo di risposta: 2 Millisecondi
-Distanza di rilevamento: 1 Metri
-Temperatura di esercizio superiore: 60 Gradi Celsius
 
 [Aliexpress](https://it.aliexpress.com/item/1005011593903879.html?spm=a2g0o.cart.0.0.4c1218fcuNMuNI&mp=1&gatewayAdapt=glo2ita)
 Lamp: 5MM 850 launch
