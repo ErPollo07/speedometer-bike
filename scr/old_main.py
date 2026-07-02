@@ -5,9 +5,9 @@ import time
 WIDTH = 128
 HEIGHT = 64
 
-SPOKE_COUNT = 4        # numero di raggi
-WHEEL_CIRC  = 1.277   # circonferenza ruota 16" in metri
-INTERVAL_MS = 500     # ogni quanti ms calcola la velocità
+SPOKE_COUNT = 4         # numero di raggi
+WHEEL_CIRC  = 1         # circonferenza ruota 16" in metri
+INTERVAL_MS = 500       # ogni quanti ms calcola la velocità
 
 sensor = Pin(34, Pin.IN)
 
@@ -17,7 +17,7 @@ i2c = SoftI2C(
     freq=400000
 )
 
-oled = ssd1306.SSD1306_I2C(WIDTH, HEIGHT, i2c) # Questa e' la riga che da problemi
+oled = ssd1306.SSD1306_I2C(WIDTH, HEIGHT, i2c)
 
 pulse_count  = 0
 speed_kmh    = 0.0
@@ -38,25 +38,21 @@ while True:
     if elapsed >= INTERVAL_MS:
         # "congela" il contatore e lo azzera subito
         count       = pulse_count
-        pulse_count = 0 
+        pulse_count = 0
         last_calc   = now
 
         # calcolo velocità
         pulses_per_sec = count / (elapsed / 1000)
         rps            = pulses_per_sec / SPOKE_COUNT
-        rpm            = rps / 60
-        speed_kmh      = (3.14 * 0.54 * rpm * 3.6) / 60
+        speed_kmh      = rps * WHEEL_CIRC * 3.6
 
         # aggiorna il massimo
-        if speed_kmh > max_speed:
-            max_speed = speed_kmh
+        # if speed_kmh > max_speed:
+        #     max_speed = speed_kmh
 
-        print(rpm, rps)
-        print("Velocita': {:} km/h  |  Max: {:.1f} km/h".format(speed_kmh, max_speed))
+        print("Velocita': {:.1f} km/h | rps: {:.3f} | pps: {:.3f}".format(speed_kmh, rps, pulses_per_sec))
         oled.fill(0)
-        text = "{:.1f} km/h".format(speed_kmh)
-        oled.text("{}".format(rpm), 56, 0)
-        oled.text(text, 32, 29)
+        oled.text("{:.1f} km/h".format(speed_kmh, max_speed), 28, 32)
         oled.show()
 
     time.sleep_ms(2)
